@@ -1,0 +1,31 @@
+﻿<Window x:Class="PLWPF.allMathers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="allMathers" Height="669" Width="1287"  WindowState ="Maximized" Background="AliceBlue">
+    <Grid>
+        <DataGrid x:Name="motherDataGrid"  Background="Transparent" Margin="3,165,1,0" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" SelectedIndex="0" Cursor="Arrow" FontWeight="Bold" RowHeight="30" CanUserResizeRows="False" HorizontalGridLinesBrush="#FF8E34A2" VerticalGridLinesBrush="#FF8E34A2">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Id" Binding="{Binding Id}" Header=" Id" Width="150"/>
+                <DataGridTextColumn x:Name="firstName" Binding="{Binding  FirstName, Mode=OneTime}" Header="first Name" Width="150"/>
+                <DataGridTextColumn x:Name="lastName" Binding="{Binding FamilyName, Mode=OneTime}" Header="last Name" Width="150"/>
+                <DataGridTextColumn x:Name="phone" Binding="{Binding  PhoneNumber, Mode=OneTime}" Header="phone number" Width="150"/>
+                <DataGridTextColumn x:Name="adress" Binding="{Binding Address, Mode=OneTime}" Header="adress" Width="150"/>
+                <DataGridTextColumn x:Name="Remarks" Binding="{Binding Remarks, Mode=OneTime}" Header="Remarks" Width="150"/>
+                <DataGridTextColumn x:Name="AreaOfLookFor" Binding="{Binding AreaOfLookFor, Mode=OneTime}" Header="Area Of Look For" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="חפש" HorizontalAlignment="Left" Margin="450,127,0,0" VerticalAlignment="Top" Width="74" Click="searchButton_Click_Search" Cursor="Hand"/>
+        <TextBox x:Name="natext" HorizontalAlignment="Left" Background="LightGoldenrodYellow" Height="23" Margin="429,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="ת.ז. אמא" HorizontalAlignment="Left" Margin="549,90,0,0" VerticalAlignment="Top"/>
+        <Label Content="Search mater" HorizontalAlignment="Left" Margin="450,10,0,0"  VerticalAlignment="Top" Width="363" Height="75" FontWeight="Bold" FontFamily="Segoe Print" FontSize="36" Foreground="#FF9A07D1">
+            <Label.Effect>
+                <DropShadowEffect Color="#FF0E0E0F" RenderingBias="Quality" BlurRadius="23" Direction="200"/>
+            </Label.Effect>
+        </Label>
+        <Button Content="רענן את הרשימה" HorizontalAlignment="Left" Margin="624,126,0,0" VerticalAlignment="Top" Width="109" Click="refreshList_Click_Restart" VerticalContentAlignment="Center" Background="#FF8E34A2" Cursor="Hand"/>
+    </Grid>
+</Window>

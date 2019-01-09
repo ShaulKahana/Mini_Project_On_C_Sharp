@@ -1,0 +1,79 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.Contract"
+        mc:Ignorable="d"
+        Title="Contract" Height="669" Width="1287"  WindowState ="Maximized" Background="AliceBlue" >
+    <Window.Resources>
+        <CollectionViewSource x:Key="contractViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:Contract}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid>
+
+        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="437,85,0,0" HorizontalAlignment="Left" DataContext="{StaticResource contractViewSource}" Height="376" Width="478">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="151"/>
+                <ColumnDefinition Width="Auto" MinWidth="203"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Bottom" Grid.Row="5" FontSize="20" Margin="18,0,-86,21" HorizontalAlignment="Left" Grid.Column="1" Content=":V אם החוזה הוא בשעות תסמני " Height="40" Width="297"/>
+            <CheckBox  x:Name="contractByHourCheckBox" VerticalAlignment="Center" Grid.Row="5" Margin="44,22,0,23" IsChecked="{Binding ContractByHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Content="" Height="16" Width="20">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <Label VerticalAlignment="Bottom" Grid.Row="4" FontSize="20" Margin="18,0,0,10" HorizontalAlignment="Left" Grid.Column="1" Content=":תאריך סיום חוזה" Height="32" Width="206"/>
+            <DatePicker x:Name="endWorkDateDatePicker" FontSize="20" VerticalAlignment="Center" SelectedDate="{Binding EndWorkDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="4" Margin="0,7,0,14" HorizontalAlignment="Left" Height="36" Width="152"/>
+            <Label VerticalAlignment="Center" Grid.Row="2" FontSize="20" Margin="25,0,0,9" HorizontalAlignment="Left" Grid.Column="1" Content=":ת.ז של הילד" Height="32" Width="159"/>
+            <TextBox x:Name="idOfChildTextBox" Width="120" FontSize="20" VerticalAlignment="Center" Text="{Binding IdOfChild, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Margin="32,39,0,10" Height="33" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+            <Label VerticalAlignment="Center" FontSize="20" Margin="26,11,-32,10" HorizontalAlignment="Left" Grid.Column="1" Content=":מספר ת.ז של האמא:" Height="34" Width="240"/>
+            <Label VerticalAlignment="Center" Grid.Row="1" FontSize="20" Margin="25,8,-33,0" HorizontalAlignment="Left" Grid.Column="1" Content="מספר ת.ז של המטפלת" Height="32" Width="241"/>
+            <Label VerticalAlignment="Center" Grid.Row="6" FontSize="20" Margin="0,10,-57,10" HorizontalAlignment="Right" Grid.Column="1" Content=":v אם התקיים פגישה תסמני" Height="38" Width="266"/>
+            <CheckBox  x:Name="meetExistedCheckBox" VerticalAlignment="Center" Grid.Row="6" Margin="46,10,0,16" IsChecked="{Binding MeetExisted, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Content="" Height="16" Width="20">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <Label VerticalAlignment="Center" Grid.Row="3" FontSize="20" Margin="25,0,0,9" HorizontalAlignment="Left" Grid.Column="1" Content=":תאריך תחלת חוזה" Height="37" Width="205"/>
+            <DatePicker x:Name="startWorkDateDatePicker"  FontSize="20" VerticalAlignment="Center" SelectedDate="{Binding StartWorkDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Margin="1,39,0,12" HorizontalAlignment="Left" Height="36" Width="152" Grid.RowSpan="2" />
+            <Grid x:Name="grid2" HorizontalAlignment="Left" Margin="41,13,0,0" Grid.Row="3" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="Label1" Content="{Binding idOfMother}" Grid.Column="0" HorizontalAlignment="Left" Margin="-24,-135,-8,138" Grid.Row="0" VerticalAlignment="Center" Height="29" Width="116" Grid.ColumnSpan="2"/>
+            </Grid>
+            <Grid x:Name="grid3" HorizontalAlignment="Left" Margin="40,13,0,0" Grid.Row="1" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="idOfNannyLabel" Content="{Binding IdOfNanny}" Grid.Column="1" HorizontalAlignment="Left" Margin="-1,-9,0,10" Grid.Row="0" VerticalAlignment="Center" Height="31"/>
+            </Grid>
+
+        </Grid>
+        <Button x:Name="add" Content="הוסף חוזה" HorizontalAlignment="Left" FontSize="20" Height="74" Margin="83,192,0,0" VerticalAlignment="Top" Click="add_Click" Width="222"/>
+        <Label x:Name="label" FontSize="20" Content="לצומת לבכם החוזה נחתם לפי השעות של האמא ולפי הסכום שהמטפלת לוקחת" HorizontalAlignment="Left" Margin="137,487,0,0" VerticalAlignment="Top" Height="41" Width="689"/>
+        <Label Content="new Contract" HorizontalAlignment="Left" Margin="518,10,0,0"  VerticalAlignment="Top" Width="286" Height="75" FontWeight="Bold" FontFamily="Segoe Print" FontSize="36" Foreground="#FF9A07D1">
+            <Label.Effect>
+                <DropShadowEffect Color="#FF0E0E0F" RenderingBias="Quality" BlurRadius="23" Direction="200"/>
+            </Label.Effect>
+        </Label>
+    </Grid>
+</Window>

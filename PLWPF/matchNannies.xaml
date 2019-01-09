@@ -1,0 +1,41 @@
+﻿<Window x:Class="PLWPF.matchNannies"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="matchNannies" WindowStartupLocation="CenterScreen" WindowState ="Maximized"  Background="AliceBlue" Height="598" Width="1126">
+    <Grid>
+        <DataGrid x:Name="motherDataGrid"  Background="Transparent" Margin="3,165,1,0" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" SelectedIndex="0" Cursor="Arrow" FontWeight="Bold" RowHeight="30" CanUserResizeRows="False" HorizontalGridLinesBrush="#FF8E34A2" VerticalGridLinesBrush="#FF8E34A2">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Id" Binding="{Binding Id}" Header=" Id" Width="150"/>
+                <DataGridTextColumn x:Name="firstName" Binding="{Binding  FirstName, Mode=OneTime}" Header="first Name" Width="150"/>
+                <DataGridTextColumn x:Name="lastName" Binding="{Binding FamilyName, Mode=OneTime}" Header="last Name" Width="150"/>
+                <DataGridTextColumn x:Name="phone" Binding="{Binding  PhoneNumber, Mode=OneTime}" Header="phone number" Width="150"/>
+                <DataGridTextColumn x:Name="adress" Binding="{Binding Address, Mode=OneTime}" Header="adress" Width="150"/>
+                <DataGridTextColumn x:Name="birthDate" Binding="{Binding BirthDate, Mode=OneTime}" Header="birth Date" Width="150"/>
+                <DataGridTextColumn x:Name="Recommendations" Binding="{Binding Recommendations, Mode=OneTime}" Header="   Recommendations   " Width="150"/>
+                <DataGridTextColumn x:Name="costForHour" Binding="{Binding CostForHour, Mode=OneTime}" Header="cost For Hour" Width="150"/>
+                <DataGridTextColumn x:Name="costForMounth" Binding="{Binding CostForMounth, Mode=OneTime}" Header="cost For Mounth" Width="150"/>
+                <DataGridTextColumn x:Name="elevator" Binding="{Binding Elevator, Mode=OneTime}" Header="elevator" Width="150"/>
+                <DataGridTextColumn x:Name="floor" Binding="{Binding Floor, Mode=OneTime}" Header="floor" Width="150"/>
+                <DataGridTextColumn x:Name="yearsOfExpirience" Binding="{Binding YearsOfExpirience, Mode=OneTime}" Header="yearsOfExpirience" Width="150"/>
+                <DataGridTextColumn x:Name="MaxAge" Binding="{Binding MaxAge, Mode=OneTime}" Header="Max Age" Width="150"/>
+                <DataGridTextColumn x:Name="minAge" Binding="{Binding MinAge, Mode=OneTime}" Header="min Age" Width="150"/>
+                <DataGridTextColumn x:Name="byHour" Binding="{Binding ByHour, Mode=OneTime}" Header="by Hour" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="חפש" HorizontalAlignment="Left" Margin="678,122,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click_Search" Cursor="Hand"/>
+        <TextBox x:Name="natext" HorizontalAlignment="Left" Background="LightGoldenrodYellow" Height="23" Margin="657,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="ת.ז. מטפלת" HorizontalAlignment="Left" Margin="777,85,0,0" VerticalAlignment="Top"/>
+        <Label Content="Search nanny" HorizontalAlignment="Left" Margin="450,10,0,0"  VerticalAlignment="Top" Width="363" Height="75" FontWeight="Bold" FontFamily="Segoe Print" FontSize="36" Foreground="#FF9A07D1">
+            <Label.Effect>
+                <DropShadowEffect Color="#FF0E0E0F" RenderingBias="Quality" BlurRadius="23" Direction="200"/>
+            </Label.Effect>
+        </Label>
+        <Button Content="רענן את הרשימה" HorizontalAlignment="Left" Margin="852,121,0,0" VerticalAlignment="Top" Width="109" Click="Button_Click_Restart" VerticalContentAlignment="Center" Background="#FF8E34A2" Cursor="Hand"/>
+        <Label x:Name="label" Content="כדי לראות יותר פרטים על המטפלת ולסגור איתה חוזה, חפשי את המטפלת לפי ת.ז. ותלחצי כאן" HorizontalAlignment="Left" Margin="99,90,0,0" VerticalAlignment="Top"/>
+        <Button Content="סגירת חוזה" HorizontalAlignment="Left" Margin="286,127,0,0" VerticalAlignment="Top" Width="74" Click="newContract_Click" Cursor="Hand"/>
+    </Grid>
+</Window>

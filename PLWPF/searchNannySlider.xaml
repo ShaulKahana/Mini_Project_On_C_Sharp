@@ -1,0 +1,21 @@
+﻿<Window x:Class="PLWPF.searchNannySlider"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="searchNannySlider"  Height="669" Width="1287" WindowState ="Maximized">
+    <Grid>
+        <Label Content="הכניסי את הרדיוס חיפוש מטפלת" HorizontalAlignment="Left" Margin="124,59,0,0"  VerticalAlignment="Top" Width="1040" Height="116" FontWeight="Black" FontFamily="Segoe Print" FontSize="60" Foreground="#FF9A07D1">
+            <Label.Effect>
+                <DropShadowEffect Color="#FF0E0E0F" RenderingBias="Quality" BlurRadius="0" Direction="100"/>
+            </Label.Effect>
+        </Label>
+        <Slider x:Name="slider" Minimum="0" Maximum="10000" Value="3000"  HorizontalAlignment="Left" Margin="52,301,0,0" VerticalAlignment="Top"  Width="500" ValueChanged="slider_ValueChanged" Height="95"/>
+        <TextBlock x:Name="textBlock1" FontSize="50" HorizontalAlignment="Left" Margin="588,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="608" Height="60"><Span FlowDirection="RightToLeft"><Run Text="ברדיו"/><Run Text="ס"/><Run Text=" של: (במטרים)"/></Span></TextBlock>
+        <Button x:Name="searchButton" Content="חפש" FontSize="30" HorizontalAlignment="Left" Margin="505,412,0,0" VerticalAlignment="Top" Width="206" Height="93" Click="searchButton_Click" />
+        <Label x:Name="label" Content="חיפוש מטפלות מתאימות לפי שעות שמעודכן במערכת ומרחק מהבית שלך או מאיזר לחיפוש מטפלת" HorizontalAlignment="Left" Margin="187,565,0,0" FontSize="20" VerticalAlignment="Top" Width="882"/>
+
+    </Grid>
+</Window>

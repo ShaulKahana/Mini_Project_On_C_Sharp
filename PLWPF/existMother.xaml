@@ -1,0 +1,356 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.existMother"
+        mc:Ignorable="d"
+        Title="existMother" Height="669" Width="1287"  WindowState ="Maximized" Background="AliceBlue" >
+    <Window.Resources>
+        <CollectionViewSource x:Key="motherViewSource" d:DesignSource="{d:DesignInstance {x:Type BE:Mother}, CreateList=True}"/>
+    </Window.Resources>
+    <Grid x:Name="mainGrid" Margin="0,-8,2,1" DataContext="{StaticResource motherViewSource}" RenderTransformOrigin="0.514,0.528" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="205*"/>
+            <ColumnDefinition Width="384*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="grid1" HorizontalAlignment="Left" Margin="59,268,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":כתובת" Grid.Column="1" HorizontalAlignment="Left" Margin="223,2,-145,4" Grid.Row="0" VerticalAlignment="Center" Width="48"/>
+            <TextBox x:Name="addressTextBox" Grid.Column="1" Height="22" Margin="24,6,-18,4" Grid.Row="0" Text="{Binding Address, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" />
+        </Grid>
+        <Grid x:Name="grid2" HorizontalAlignment="Left" Margin="76,236,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":אזור חיפוש מטפלת" Grid.Column="1" HorizontalAlignment="Left" Margin="204,2,-196,4" Grid.Row="0" VerticalAlignment="Center" Width="125"/>
+            <TextBox x:Name="areaOfLookForTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="6,2,0,6" Grid.Row="0" Text="{Binding AreaOfLookFor, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid x:Name="grid3" HorizontalAlignment="Left" Margin="47,268,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":שם משפחה" Grid.Column="1" HorizontalAlignment="Left" Margin="232,-90,-160,96" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="familyNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="33,-90,-27,100" Grid.Row="0" Text="{Binding FamilyName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Grid x:Name="grid4" HorizontalAlignment="Left" Margin="43,280,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":שם פרטי" Grid.Column="1" HorizontalAlignment="Left" Margin="236,-140,-169,146" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="firstNameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="38,-136,-32,144" Grid.Row="0" Text="{Binding FirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Bottom" Width="120"/>
+        </Grid>
+        <Grid x:Name="grid6" HorizontalAlignment="Left" Margin="81,304,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":מספר סוללארי" Grid.Column="1" HorizontalAlignment="Left" Margin="202,4,-170,2" Grid.Row="0" VerticalAlignment="Center" Width="94"/>
+            <TextBox x:Name="phoneNumberTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Grid x:Name="grid7" HorizontalAlignment="Left" Margin="82,336,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":הערות" Grid.Column="1" HorizontalAlignment="Left" Margin="206,4,-152,2" Grid.Row="0" VerticalAlignment="Center" Width="72"/>
+            <TextBox x:Name="remarksTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Remarks, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Grid x:Name="grid26" HorizontalAlignment="Left" Margin="433.845,297,-50,0" VerticalAlignment="Top" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Grid x:Name="grid27" HorizontalAlignment="Left" Margin="170,306,0,0" VerticalAlignment="Top" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Grid x:Name="grid28" HorizontalAlignment="Left" Margin="486.845,306,-103,0" VerticalAlignment="Top" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Button x:Name="apdateButton" Content="עדכן"  FontSize="30" FontStyle="Italic" BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Left" Margin="650,526,0,59" Width="150" Click="apdateButton_Click" Grid.Column="1" Height="60"/>
+        <Grid x:Name="grid29" HorizontalAlignment="Left" Margin="78,203,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="סיסמה" Grid.Column="1" HorizontalAlignment="Left" Margin="201,4,-155,2" Grid.Row="0" VerticalAlignment="Center" Width="80"/>
+            <TextBox x:Name="passwordTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Password, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+        <Label x:Name="label" Content="השעות שאת מעוניינת במטפלת כפי שמופיע במערכת" FontSize="20" HorizontalAlignment="Left" Margin="124,49,0,0" VerticalAlignment="Top" Width="474" Grid.Column="1" Height="51"/>
+        <Label x:Name="label_Copy" Content="הפרטים שלך כפי שמופיעים במערכת" FontSize="20" HorizontalAlignment="Left" Margin="41,49,0,0" VerticalAlignment="Top" Width="474" Height="51" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy1" Content="לעדכון פרטים תלחצי כאן" FontSize="20" HorizontalAlignment="Left" Margin="604,503,0,0" VerticalAlignment="Top" Width="228" Grid.Column="1" Height="51"/>
+        <Grid x:Name="grid5" HorizontalAlignment="Left" Margin="90,90,0,0" VerticalAlignment="Top" Width="129">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="לפי מספר זהות" Grid.Column="1" HorizontalAlignment="Left" Margin="136,9,-193,9" Grid.Row="0" VerticalAlignment="Center" Width="97"/>
+            <Label x:Name="idLabel" Content="{Binding Id}" Grid.Column="1"  FontSize="15" FontStyle="Italic" BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Left" Margin="3,3,-192,3" Grid.Row="0" VerticalAlignment="Center" Width="230"/>
+        </Grid>
+        <Label x:Name="label_Copy2" Content="להוספת ילד תלחצי כאן" FontSize="20" HorizontalAlignment="Left" Margin="382,503,0,96" Width="228" Grid.Column="1"/>
+        <Button x:Name="existChildButton_Copy1" Content="ילדים שלי"  FontSize="30" FontStyle="Italic" BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Left" Margin="141,559,0,0" VerticalAlignment="Top" Width="161" Click="existChildButton_Click" Height="60" Grid.Column="1"/>
+        <Label x:Name="label_Copy3" Content="להצגת רשימת ילדים תלחצי כאן" FontSize="20" HorizontalAlignment="Left" Margin="81,504,0,0" VerticalAlignment="Top" Width="309" Height="51" Grid.Column="1"/>
+        <Button x:Name="shrchNannyButton_Copy2" Content="חיפוש"  FontSize="30" FontStyle="Italic" BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Left" Margin="314,559,0,0" VerticalAlignment="Top" Width="150" Click="shrchNannyButton_Click" Height="60" Grid.ColumnSpan="2"/>
+        <Label x:Name="label_Copy4" Content="לחיפוש מטפלת תלחצי כאן" FontSize="20" HorizontalAlignment="Left" Margin="275,508,0,0" VerticalAlignment="Top" Width="240" Height="51" Grid.ColumnSpan="2"/>
+        <Button x:Name="addChildButton" Content="הוספת ילד"  FontSize="30" FontStyle="Italic" BorderBrush="Black" BorderThickness="4" HorizontalAlignment="Left" Margin="403,526,0,59" Width="166" Height="60"  Click="addChildButton_Click" Grid.Column="1"/>
+        <Button x:Name="removeMom" FontSize="20" Content="הסר אותי מהמערכת" HorizontalAlignment="Left" Margin="59,419,0,0" VerticalAlignment="Top" Width="291" Height="50" Click="removeMom_Click" />
+        <Label x:Name="label1" Content="מעוניינת" FontSize="20" HorizontalAlignment="Left" Margin="413,100,0,0" VerticalAlignment="Top" Width="108" Height="50" Grid.Column="1"/>
+        <Label x:Name="label1_Copy" Content="שעת התחלה" FontSize="20" HorizontalAlignment="Left" Margin="222,100,0,0" VerticalAlignment="Top" Width="148" Height="50" Grid.Column="1"/>
+        <Label x:Name="label1_Copy1" Content="שעת סיום" FontSize="20" HorizontalAlignment="Left" Margin="77,100,0,0" VerticalAlignment="Top" Height="50" Width="112" Grid.Column="1"/>
+        <Label x:Name="label1_Copy2" Content="יום" FontSize="20" HorizontalAlignment="Left" Margin="603,100,0,0" VerticalAlignment="Top" Height="50" Width="41" Grid.Column="1"/>
+        <Grid x:Name="grid10" HorizontalAlignment="Left" Margin="466,153,0,0" VerticalAlignment="Top" Width="196" Height="44" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="59"/>
+                <ColumnDefinition Width="Auto" MinWidth="47"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":ראשון" Grid.Column="1" HorizontalAlignment="Left" Margin="77,0,-90,10" Grid.Row="0" VerticalAlignment="Center" Height="26" Width="67"/>
+
+        </Grid>
+        <Grid x:Name="grid11" HorizontalAlignment="Left" Margin="413,211,0,0" VerticalAlignment="Top" Height="43" Width="112" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":שני" Grid.Column="1" HorizontalAlignment="Left" Margin="150,-2,-146,19" Grid.Row="0" VerticalAlignment="Center" Height="26" Width="69"/>
+            <CheckBox x:Name="mondayCheckBox" Content="" HorizontalAlignment="Left" IsChecked="{Binding Manday, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="18,0,0,17" Grid.Row="0" VerticalAlignment="Center" Height="16" Width="20"/>
+        </Grid>
+        <Grid x:Name="grid14" HorizontalAlignment="Left" Margin="502,357,0,0" VerticalAlignment="Top" Height="57" Width="163" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":חמישי" Grid.Column="1" HorizontalAlignment="Left" Margin="100,9,-144,10" Grid.Row="0" VerticalAlignment="Center"/>
+            <CheckBox x:Name="thursdayCheckBox" Content="" HorizontalAlignment="Left" IsChecked="{Binding Thursday, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="-70,10,0,21" Grid.Row="0" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid x:Name="grid15" HorizontalAlignment="Left" Margin="548,414,0,0" VerticalAlignment="Top" Height="59" Width="87" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":שישי" Grid.Column="1" HorizontalAlignment="Left" Margin="53,4,-84,9" Grid.Row="0" VerticalAlignment="Center"/>
+            <CheckBox x:Name="fridayCheckBox" Content="" HorizontalAlignment="Left" IsChecked="{Binding Friday, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="-119,10,0,19" Grid.Row="0" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid x:Name="grid8" HorizontalAlignment="Left" Margin="66,152,0,0" VerticalAlignment="Top" Height="39" Width="120" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="sundayfinishTextBox" IsEnabled="{Binding IsChecked, ElementName=sundayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="31,3,0,3" Grid.Row="0" Text="{Binding Sundayfinish, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid16_Copy" HorizontalAlignment="Left" Margin="248,202,0,0" VerticalAlignment="Top" Width="149" Height="40" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="mondaystartTextBox" IsEnabled="{Binding IsChecked, ElementName=mondayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="21,3,0,3" Grid.Row="0" Text="{Binding Mondaystart, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid17" HorizontalAlignment="Left" Margin="73,208,0,0" VerticalAlignment="Top" Height="40" Width="112" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="mondayfinishTextBox" IsEnabled="{Binding IsChecked, ElementName=mondayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="25,-4,0,10" Grid.Row="0" Text="{Binding Mondayfinish, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid18" HorizontalAlignment="Left" Margin="266,257,0,0" VerticalAlignment="Top" Height="40" Width="70" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="tuesdaystartTextBox" IsEnabled="{Binding IsChecked, ElementName=tuesdayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3,3,-10,3" Grid.Row="0" Text="{Binding Tuesdaystart, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid19" HorizontalAlignment="Left" Margin="65,252,0,0" VerticalAlignment="Top" Height="39" Width="121" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="tuesdayfinishTextBox" IsEnabled="{Binding IsChecked, ElementName=tuesdayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="32,4,-1,4" Grid.Row="0" Text="{Binding Tuesdayfinish, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid20" HorizontalAlignment="Left" Margin="244,301,0,0" VerticalAlignment="Top" Height="39" Width="104" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="wednesdaystartTextBox" IsEnabled="{Binding IsChecked, ElementName=wednesdayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="24,3,0,3" Grid.Row="0" Text="{Binding Wednesdaystart, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid21" HorizontalAlignment="Left" Margin="66,302,0,0" VerticalAlignment="Top" Height="40" Width="120" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="wednesdayfinishTextBox" IsEnabled="{Binding IsChecked, ElementName=wednesdayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="29,3,0,3" Grid.Row="0" Text="{Binding Wednesdayfinish, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid22" HorizontalAlignment="Left" Margin="246,353,0,0" VerticalAlignment="Top" Height="39" Width="102" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="thursdaystartTextBox" IsEnabled="{Binding IsChecked, ElementName=thursdayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="23,3,0,3" Grid.Row="0" Text="{Binding Thursdaystart, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid24_Copy" HorizontalAlignment="Left" Margin="246,412,0,0" VerticalAlignment="Top" Height="39" Width="102" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="fridaystartTextBox" IsEnabled="{Binding IsChecked, ElementName=fridayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="22,3,0,3" Grid.Row="0" Text="{Binding Fridaystart, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid25" HorizontalAlignment="Left" Margin="69,412,0,0" VerticalAlignment="Top" Height="39" Width="119" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="fridayfinishTextBox" IsEnabled="{Binding IsChecked, ElementName=fridayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="27,3,0,3" Grid.Row="0" Text="{Binding Fridayfinish, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid23" HorizontalAlignment="Left" Margin="66,353,0,0" VerticalAlignment="Top" Height="39" Width="123" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="thursdayfinishTextBox" IsEnabled="{Binding IsChecked, ElementName=thursdayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="29,3,0,3" Grid.Row="0" Text="{Binding Thursdayfinish, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid9_Copy" HorizontalAlignment="Left" Margin="271,174,0,0" VerticalAlignment="Top" Height="39" Width="53" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="sundaystartTextBox" IsEnabled="{Binding IsChecked, ElementName=sundayCheckBox}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="0,-14,-19,20" Grid.Row="0" Text="{Binding Sundaystart, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="35"/>
+        </Grid>
+        <Grid x:Name="grid9_Copy1" HorizontalAlignment="Left" Margin="524,281,0,0" VerticalAlignment="Top" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":רביעי" Grid.Column="1" HorizontalAlignment="Left" Margin="77,28,-117,-21" Grid.Row="0" VerticalAlignment="Center"/>
+            <CheckBox x:Name="wednesdayCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding Wednesday, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="-93,28,0,-10" Grid.Row="0" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid x:Name="grid12" HorizontalAlignment="Left" Margin="474,261,0,0" VerticalAlignment="Top" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content=":שלישי" Grid.Column="1" HorizontalAlignment="Left" Margin="127,-5,-157,11" Grid.Row="0" VerticalAlignment="Center"/>
+            <CheckBox x:Name="tuesdayCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding Tuesday, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="-43,-2,0,19" Grid.Row="0" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid x:Name="grid31" HorizontalAlignment="Left" Margin="427,163,0,0" VerticalAlignment="Top" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <CheckBox x:Name="sundayCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding Sunday, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+        </Grid>
+
+    </Grid>
+</Window>
